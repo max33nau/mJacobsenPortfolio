@@ -7,7 +7,7 @@ const cors = require('cors');
 
 
 /**** FavIcon ****/
-app.use(favicon(path.join(__dirname , './public/favicon.ico')));
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
 
 /**** Cross Origin Resource Sharing ****/
 app.use(cors()); // allows restricted resources on a web page to be requested from another domain
