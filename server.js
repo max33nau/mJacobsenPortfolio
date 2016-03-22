@@ -3,6 +3,10 @@ const mongoose = require( 'mongoose' );
 const app = require('./app');
 mongoose.Promise = global.Promise;
 
+if (process.env.NODE_ENV !== 'development') {
+  console.log('The process env variables: ', process.env);
+}
+
 /**** Connect app to the server ****/
 mainApp = {};
 mainApp.start = function(callback) {
