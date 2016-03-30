@@ -3,9 +3,18 @@
   <head>
 	  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <title>My Portfolio</title>
+	  <title> Max Jacobsen | Developer </title>
   </head>
   <body>
-    <h1> Hello World! </h1>
+    <header>
+      <a ui-sref='home' id='logo'> <h1> Max Jacobsen </h1> </a>
+      <main-nav> </main-nav>
+    </header>
+    <div id='container'>
+      <main ui-view> </main>
+      <footer>
+        <p> &copy; 2016 Max Jacobsen </p>
+      </footer>
+    </div>
   <script src="bundle.js"></script></body>
 </html>
