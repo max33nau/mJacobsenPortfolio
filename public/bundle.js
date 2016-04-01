@@ -49,23 +49,25 @@
 	
 	__webpack_require__(1);
 	
-	var _angular = __webpack_require__(5);
+	__webpack_require__(5);
+	
+	var _angular = __webpack_require__(7);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _angularUiRouter = __webpack_require__(7);
+	var _angularUiRouter = __webpack_require__(9);
 	
 	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
 	
-	var _directives = __webpack_require__(8);
+	var _directives = __webpack_require__(10);
 	
 	var _directives2 = _interopRequireDefault(_directives);
 	
-	var _stateControllers = __webpack_require__(11);
+	var _stateControllers = __webpack_require__(17);
 	
 	var _stateControllers2 = _interopRequireDefault(_stateControllers);
 	
-	var _stateProvider = __webpack_require__(21);
+	var _stateProvider = __webpack_require__(27);
 	
 	var _stateProvider2 = _interopRequireDefault(_stateProvider);
 	
@@ -132,9 +134,10 @@
 	exports = module.exports = __webpack_require__(3)();
 	// imports
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900);", ""]);
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Vast+Shadow|Faster+One|Quicksand);", ""]);
 	
 	// module
-	exports.push([module.id, "/****** BASE ******/\nbody {\n  font-family: sans-serif; }\n\n#container {\n  max-width: 940px;\n  margin: 0 auto;\n  padding: 0 5%; }\n\na {\n  text-decoration: none; }\n\nh3 {\n  margin: 0 0 1em 0; }\n\n/****** HEADER ******/\nheader {\n  margin: 0 0 30px 0;\n  padding: 5px 0 0 0;\n  width: 100%; }\n\n#logo {\n  text-align: center;\n  margin: 0; }\n  #logo h1 {\n    font-family: \"Cinzel Decorative\", cursive;\n    margin: 15px 0;\n    font-size: 1.75em;\n    font-weight: bolder; }\n\n/****** NAVIGATION ******/\nnav {\n  text-align: center;\n  padding: 10px 0;\n  margin: 20px 0 0; }\n  nav ul {\n    list-style: none;\n    margin: 0 10px; }\n  nav li {\n    display: inline-block; }\n  nav a {\n    font-family: \"Cinzel Decorative\", cursive;\n    font-weight: normal;\n    font-size: .75em;\n    padding: 10px; }\n\n/****** FOOTER ******/\nfooter {\n  font-size: 0.75em;\n  text-align: center;\n  margin-top: 20px;\n  padding-top: 50px; }\n\n/****** Colors ******/\nbody {\n  background: #C9C3CA; }\n\n#logo h1 {\n  color: #B5AD93; }\n\nheader {\n  background-color: #080813;\n  border-color: #0F0D24; }\n\nnav {\n  background: #0F0D24; }\n  nav a {\n    color: #B5AD93; }\n    nav a:visited {\n      color: #B5AD93; }\n    nav a.active {\n      color: #fff; }\n\nfooter {\n  color: #080813; }\n\n/****** Alignment ******/\n.center {\n  text-align: center;\n  margin: 0 auto; }\n", ""]);
+	exports.push([module.id, "/****** BASE ******/\nbody {\n  font-family: sans-serif; }\n\n#container {\n  max-width: 940px;\n  margin: 0 auto;\n  padding: 0 5%; }\n\na {\n  text-decoration: none; }\n\nh3 {\n  margin: 0 0 1em 0; }\n\n/****** HEADER ******/\nheader {\n  margin: 0 0 30px 0;\n  padding: 5px 0 0 0;\n  width: 100%; }\n\n#logo {\n  text-align: center;\n  margin: 0; }\n  #logo h1 {\n    font-family: \"Cinzel Decorative\", cursive;\n    margin: 15px 0;\n    font-size: 1.75em;\n    font-weight: bolder; }\n\n/****** NAVIGATION ******/\nnav {\n  text-align: center;\n  padding: 10px 0;\n  margin: 20px 0 0; }\n  nav ul {\n    list-style: none;\n    margin: 0 10px; }\n  nav li {\n    display: inline-block; }\n  nav a {\n    font-family: \"Cinzel Decorative\", cursive;\n    font-weight: normal;\n    font-size: .75em;\n    padding: 10px; }\n\n/****** FOOTER ******/\nfooter {\n  font-size: 0.75em;\n  text-align: center;\n  clear: both;\n  margin-top: 20px;\n  padding-top: 50px; }\n\n/****** Colors ******/\nbody {\n  background: #C9C3CA; }\n\na {\n  color: #001A87; }\n  a:visited {\n    color: #001A87; }\n\n#logo h1 {\n  color: #B5AD93; }\n\nheader {\n  background-color: #080813;\n  border-color: #0F0D24; }\n\nnav {\n  background: #0F0D24; }\n  nav a {\n    color: #B5AD93; }\n    nav a:visited {\n      color: #B5AD93; }\n    nav a.active {\n      color: #fff; }\n\nfooter {\n  color: #080813; }\n\n/****** Alignment ******/\n.center {\n  text-align: center;\n  margin: 0 auto; }\n", ""]);
 	
 	// exports
 
@@ -453,12 +456,53 @@
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(6);
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(6);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/sass-loader/index.js!./responsive.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/sass-loader/index.js!./responsive.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900);", ""]);
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Vast+Shadow|Faster+One|Quicksand);", ""]);
+	
+	// module
+	exports.push([module.id, "@media screen and (min-width: 480px) {\n  /****** Contact Me 2 column layout ******/\n  #primary {\n    float: left;\n    width: 50%; }\n  #secondary {\n    width: 40%;\n    float: right; } }\n\n@media screen and (min-width: 790px) {\n  header {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    border-bottom: 5px solid #0F0D24;\n    margin-bottom: 60px; }\n  #logo {\n    margin-left: 2%; }\n  nav {\n    margin: auto 10px;\n    background: none;\n    font-size: 1.125em;\n    text-align: right; } }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(8);
 	module.exports = angular;
 
 
 /***/ },
-/* 6 */
+/* 8 */
 /***/ function(module, exports) {
 
 	/**
@@ -31043,7 +31087,7 @@
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ },
-/* 7 */
+/* 9 */
 /***/ function(module, exports) {
 
 	/**
@@ -35587,7 +35631,7 @@
 	})(window, window.angular);
 
 /***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35596,20 +35640,30 @@
 	  value: true
 	});
 	
-	var _mainNav = __webpack_require__(9);
+	var _mainNav = __webpack_require__(11);
 	
 	var _mainNav2 = _interopRequireDefault(_mainNav);
+	
+	var _mainHeader = __webpack_require__(13);
+	
+	var _mainHeader2 = _interopRequireDefault(_mainHeader);
+	
+	var _mainFooter = __webpack_require__(15);
+	
+	var _mainFooter2 = _interopRequireDefault(_mainFooter);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var directives = angular.module('directives', []);
 	
+	(0, _mainHeader2.default)(directives);
 	(0, _mainNav2.default)(directives);
+	(0, _mainFooter2.default)(directives);
 	
 	exports.default = directives.name;
 
 /***/ },
-/* 9 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35628,20 +35682,84 @@
 		});
 	};
 	
-	var _mainNav = __webpack_require__(10);
+	var _mainNav = __webpack_require__(12);
 	
 	var _mainNav2 = _interopRequireDefault(_mainNav);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 10 */
+/* 12 */
 /***/ function(module, exports) {
 
 	module.exports = "<nav>\n  <div>\n    <ul>\n      <li><a ng-class='{active: root.activeLink == \"home\"}' ui-sref=\"home\"> Home </a></li>\n      <li><a ng-class='{active: root.activeLink == \"aboutMe\"}' ui-sref=\"aboutMe\"> About Me </a></li>\n      <li><a ng-class='{active: root.activeLink == \"resume\"}' ui-sref=\"resume\"> Resume </a></li>\n      <li><a ng-class='{active: root.activeLink == \"projects\"}' ui-sref=\"projects\"> Projects </a></li>\n      <li><a ng-class='{active: root.activeLink == \"contactMe\"}' ui-sref=\"contactMe\"> Contact Me </a></li>\n    </ul>\n  </div>\n</nav>\n";
 
 /***/ },
-/* 11 */
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	exports.default = function (ngModule) {
+		ngModule.directive('mainHeader', function () {
+			return {
+				replace: true,
+				restrict: 'E',
+				template: _mainHeader2.default
+			};
+		});
+	};
+	
+	var _mainHeader = __webpack_require__(14);
+	
+	var _mainHeader2 = _interopRequireDefault(_mainHeader);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	module.exports = "<a ui-sref='home' id='logo'> <h1> Max Jacobsen </h1> </a>\n";
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	exports.default = function (ngModule) {
+		ngModule.directive('mainFooter', function () {
+			return {
+				replace: true,
+				restrict: 'E',
+				template: _mainFooter2.default
+			};
+		});
+	};
+	
+	var _mainFooter = __webpack_require__(16);
+	
+	var _mainFooter2 = _interopRequireDefault(_mainFooter);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	module.exports = "<footer>\n  <p> &copy; 2016 Max Jacobsen </p>\n</footer>\n";
+
+/***/ },
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35650,19 +35768,19 @@
 	  value: true
 	});
 	
-	var _angular = __webpack_require__(5);
+	var _angular = __webpack_require__(7);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _homeCtrl = __webpack_require__(12);
+	var _homeCtrl = __webpack_require__(18);
 	
 	var _homeCtrl2 = _interopRequireDefault(_homeCtrl);
 	
-	var _projectsCtrl = __webpack_require__(15);
+	var _projectsCtrl = __webpack_require__(21);
 	
 	var _projectsCtrl2 = _interopRequireDefault(_projectsCtrl);
 	
-	var _aboutMeCtrl = __webpack_require__(18);
+	var _aboutMeCtrl = __webpack_require__(24);
 	
 	var _aboutMeCtrl2 = _interopRequireDefault(_aboutMeCtrl);
 	
@@ -35677,146 +35795,6 @@
 	exports.default = stateCtrls.name;
 
 /***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	exports.default = function (ngModule) {
-	  ngModule.controller('homeCtrl', ['$scope', function ($scope) {
-	    $scope.styles = _home2.default;
-	    $scope.initialImage = 'https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11181200_10154074971869913_8198207843358396468_n.jpg?oh=7be0d41e091f5a3ef859074b47068450&oe=5783471E';
-	    //'https://scontent.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10993406_10153122858064913_4616204215396259203_n.jpg?oh=285c2df4bb62b56335cff0d469f29e7f&oe=5789D7D2';
-	    $scope.transitionImage = 'https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/12705633_10154050307074913_3251968113614216408_n.jpg?oh=dbbcdb483a34674e1b9034aca984dc8b&oe=5796947D';
-	  }]);
-	};
-	
-	var _home = __webpack_require__(13);
-	
-	var _home2 = _interopRequireDefault(_home);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	'use strict';
-
-/***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(14);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./home.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./home.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(3)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".home-page {\n  display: block;\n  height: 400px; }\n\n.main-page-img {\n  width: 300px;\n  height: 400px;\n  max-width: 100%;\n  margin: 10px;\n  border: solid 5px black;\n  border-radius: 10%; }\n\n.content {\n  display: flex;\n  position: absolute;\n  left: 0;\n  right: 0;\n  justify-content: center;\n  margin: 0 auto;\n  width: 400px;\n  max-width: 100%;\n  text-align: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#turned {\n  width: 300px;\n  height: 400px;\n  margin: auto;\n  max-width: 100%; }\n\n.fade-away {\n  -webkit-animation: fadeAway 1s 1s 1 linear forwards;\n  /* Safari 4+ */\n  -moz-animation: fadeAway 1s 1s 1 linear forwards;\n  /* Fx 5+ */\n  -o-animation: fadeAway 1s 1s 1 linear forwards;\n  /* Opera 12+ */\n  animation: fadeAway 1s 1s 1 linear forwards;\n  /* IE 10+, Fx 29+ */ }\n\n@-webkit-keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@-moz-keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@-o-keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n.fade-in {\n  opacity: 0;\n  -webkit-animation: fadeIn 2s 1 linear forwards;\n  -moz-animation: fadeIn 2s 1 linear forwards;\n  -o-animation: fadeIn 2s 1 linear forwards;\n  animation: fadeIn 2s 1 linear forwards; }\n\n@-webkit-keyframes fadeIn {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n@-moz-keyframes fadeIn {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n@-o-keyframes fadeIn {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n@keyframes fadeIn {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.fade-in.first {\n  -webkit-animation-delay: 3s;\n  -moz-animation-delay: 3s;\n  animation-delay: 3s; }\n\n.fade-in.second {\n  -webkit-animation-delay: 5s;\n  -moz-animation-delay: 5s;\n  animation-delay: 5s; }\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	exports.default = function (ngModule) {
-	  ngModule.controller('projectsCtrl', ['$scope', function ($scope) {
-	    $scope.styles = _projects2.default;
-	    $scope.projects = [{
-	      title: 'Relax and Color',
-	      src: 'https://scontent.xx.fbcdn.net/hphotos-xpl1/v/t1.0-9/12801620_10154074971879913_3792787906189248231_n.jpg?oh=790838a5aa6b68b61f41f00f3db071fa&oe=577AA21B',
-	      url: 'https://relax-and-color.herokuapp.com/#/home'
-	    }, {
-	      title: 'Settlers of Candyland',
-	      src: 'https://scontent.xx.fbcdn.net/hphotos-xlf1/v/t1.0-9/11181190_10154074971984913_7718801846265162628_n.jpg?oh=6ab2d63dd21a2554971d8320f64f5ee3&oe=578F67A0',
-	      url: 'http://settlersofcandyland.herokuapp.com/'
-	    }];
-	  }]);
-	};
-	
-	var _projects = __webpack_require__(16);
-	
-	var _projects2 = _interopRequireDefault(_projects);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	'use strict';
-
-/***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(17);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./projects.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./projects.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(3)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".projects {\n  text-align: center;\n  margin-top: 10px; }\n\n.projectContainer {\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  flex-flow: row wrap; }\n\n.projectListImage {\n  width: 200px;\n  border: solid 1px black;\n  margin-top: 10px; }\n\n.projectListInfo {\n  color: #fff;\n  width: 200px;\n  max-width: 100%;\n  text-align: center;\n  margin: 20px;\n  padding: 20px;\n  background-color: #404F5E;\n  border-radius: 10%; }\n  .projectListInfo a {\n    color: #A0EDFF;\n    text-decoration: underline; }\n    .projectListInfo a:visited {\n      color: #A0EDFF; }\n", ""]);
-	
-	// exports
-
-
-/***/ },
 /* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -35827,15 +35805,17 @@
 	});
 	
 	exports.default = function (ngModule) {
-	  ngModule.controller('aboutMeCtrl', ['$scope', function ($scope) {
-	    $scope.styles = _aboutMe2.default;
-	    $scope.profilePic = 'https://scontent.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/1936328_10154075600624913_2083474085707076509_n.jpg?oh=1a252f41b728747507507732f1b2f642&oe=57824AAA';
+	  ngModule.controller('homeCtrl', ['$scope', function ($scope) {
+	    $scope.style = _home2.default;
+	    $scope.initialImage = 'https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11181200_10154074971869913_8198207843358396468_n.jpg?oh=7be0d41e091f5a3ef859074b47068450&oe=5783471E';
+	    //'https://scontent.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10993406_10153122858064913_4616204215396259203_n.jpg?oh=285c2df4bb62b56335cff0d469f29e7f&oe=5789D7D2';
+	    $scope.transitionImage = 'https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/12705633_10154050307074913_3251968113614216408_n.jpg?oh=dbbcdb483a34674e1b9034aca984dc8b&oe=5796947D';
 	  }]);
 	};
 	
-	var _aboutMe = __webpack_require__(19);
+	var _home = __webpack_require__(19);
 	
-	var _aboutMe2 = _interopRequireDefault(_aboutMe);
+	var _home2 = _interopRequireDefault(_home);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -35857,8 +35837,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./about-me.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./about-me.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./home.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./home.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -35873,10 +35853,11 @@
 
 	exports = module.exports = __webpack_require__(3)();
 	// imports
-	
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900);", ""]);
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Vast+Shadow|Faster+One|Quicksand);", ""]);
 	
 	// module
-	exports.push([module.id, ".profilePic {\n  display: block;\n  max-width: 150px;\n  margin: 0 auto 30px;\n  border-radius: 100%; }\n\n.text-link {\n  color: #001A87;\n  font-weight: bold; }\n  .text-link:visited {\n    color: #001A87; }\n", ""]);
+	exports.push([module.id, ".home-page {\n  display: block;\n  height: 400px; }\n\n.home-header {\n  font-family: \"Vast Shadow\", cursive;\n  margin: 5px; }\n\n.main-page-img {\n  width: 280px;\n  height: 350px;\n  max-width: 100%;\n  margin: 10px;\n  border: solid 5px black;\n  border-radius: 10%;\n  background-color: black;\n  color: white; }\n\n.content {\n  display: flex;\n  position: absolute;\n  left: 0;\n  right: 0;\n  justify-content: center;\n  margin: 0 auto;\n  width: 400px;\n  max-width: 100%;\n  text-align: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#turned {\n  width: 300px;\n  height: 400px;\n  position: absolute;\n  left: -150%;\n  margin: auto;\n  max-width: 100%;\n  font-family: \"Faster One\", cursive; }\n\n.fade-away {\n  -webkit-animation: fadeAway 1s 1s 1 linear forwards;\n  /* Safari 4+ */\n  -moz-animation: fadeAway 1s 1s 1 linear forwards;\n  /* Fx 5+ */\n  -o-animation: fadeAway 1s 1s 1 linear forwards;\n  /* Opera 12+ */\n  animation: fadeAway 1s 1s 1 linear forwards;\n  /* IE 10+, Fx 29+ */ }\n\n@-webkit-keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@-moz-keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@-o-keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n.fade-in {\n  opacity: 0;\n  -webkit-animation: fadeIn 2s 1 linear forwards;\n  -moz-animation: fadeIn 2s 1 linear forwards;\n  -o-animation: fadeIn 2s 1 linear forwards;\n  animation: fadeIn 2s 1 linear forwards; }\n\n@-webkit-keyframes fadeIn {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n@-moz-keyframes fadeIn {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n@-o-keyframes fadeIn {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n@keyframes fadeIn {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.fade-in.delay {\n  -webkit-animation-delay: 5.5s;\n  -moz-animation-delay: 5.5s;\n  animation-delay: 5.5s; }\n\n.fly-in {\n  -webkit-animation: flyIn 2.5s 2s 1 ease-out forwards;\n  /* Safari 4+ */\n  -moz-animation: flyIn 2.5s 2s 1 ease-out forwards;\n  /* Fx 5+ */\n  -o-animation: flyIn 2.5s 2s 1 ease-out forwards;\n  /* Opera 12+ */\n  animation: flyIn 2.5s 2s 1 ease-out forwards;\n  /* IE 10+, Fx 29+ */ }\n\n@-webkit-keyframes flyIn {\n  from {\n    left: -150%; }\n  to {\n    left: 0;\n    right: 0; } }\n\n@-moz-keyframes flyIn {\n  from {\n    left: -150%; }\n  to {\n    left: 0;\n    right: 0; } }\n\n@-o-keyframes flyIn {\n  from {\n    left: -150%; }\n  to {\n    left: 0;\n    right: 0; } }\n\n@keyframes flyIn {\n  from {\n    left: -150%; }\n  to {\n    left: 0;\n    right: 0; } }\n", ""]);
 	
 	// exports
 
@@ -35891,34 +35872,71 @@
 	  value: true
 	});
 	
-	exports.default = function ($stateProvider) {
-	  $stateProvider.state('home', _home2.default).state('aboutMe', _aboutMe2.default).state('projects', _projects2.default).state('resume', _resume2.default).state('contactMe', _contactMe2.default);
+	exports.default = function (ngModule) {
+	  ngModule.controller('projectsCtrl', ['$scope', function ($scope) {
+	    $scope.style = _projects2.default;
+	    $scope.projects = [{
+	      title: 'Relax and Color',
+	      src: 'https://scontent.xx.fbcdn.net/hphotos-xpl1/v/t1.0-9/12801620_10154074971879913_3792787906189248231_n.jpg?oh=790838a5aa6b68b61f41f00f3db071fa&oe=577AA21B',
+	      url: 'https://relax-and-color.herokuapp.com/#/home'
+	    }, {
+	      title: 'Settlers of Candyland',
+	      src: 'https://scontent.xx.fbcdn.net/hphotos-xlf1/v/t1.0-9/11181190_10154074971984913_7718801846265162628_n.jpg?oh=6ab2d63dd21a2554971d8320f64f5ee3&oe=578F67A0',
+	      url: 'http://settlersofcandyland.herokuapp.com/'
+	    }];
+	  }]);
 	};
 	
-	var _home = __webpack_require__(22);
-	
-	var _home2 = _interopRequireDefault(_home);
-	
-	var _aboutMe = __webpack_require__(24);
-	
-	var _aboutMe2 = _interopRequireDefault(_aboutMe);
-	
-	var _projects = __webpack_require__(26);
+	var _projects = __webpack_require__(22);
 	
 	var _projects2 = _interopRequireDefault(_projects);
 	
-	var _resume = __webpack_require__(28);
-	
-	var _resume2 = _interopRequireDefault(_resume);
-	
-	var _contactMe = __webpack_require__(30);
-	
-	var _contactMe2 = _interopRequireDefault(_contactMe);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	'use strict';
 
 /***/ },
 /* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(23);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./projects.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./projects.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".projects {\n  text-align: center;\n  margin-top: 10px; }\n\n.projectContainer {\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  flex-flow: row wrap; }\n\n.projectListImage {\n  width: 200px;\n  border: solid 1px black;\n  margin-top: 10px; }\n\n.projectListInfo {\n  color: #fff;\n  width: 200px;\n  max-width: 100%;\n  text-align: center;\n  margin: 20px;\n  padding: 20px;\n  background-color: #404F5E;\n  border-radius: 10%; }\n  .projectListInfo a {\n    color: #A0EDFF;\n    text-decoration: underline; }\n    .projectListInfo a:visited {\n      color: #A0EDFF; }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35927,7 +35945,108 @@
 	  value: true
 	});
 	
-	var _home = __webpack_require__(23);
+	exports.default = function (ngModule) {
+	  ngModule.controller('aboutMeCtrl', ['$scope', function ($scope) {
+	    $scope.styles = _aboutMe2.default;
+	    $scope.profilePic = 'https://scontent.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/1936328_10154075600624913_2083474085707076509_n.jpg?oh=1a252f41b728747507507732f1b2f642&oe=57824AAA';
+	  }]);
+	};
+	
+	var _aboutMe = __webpack_require__(25);
+	
+	var _aboutMe2 = _interopRequireDefault(_aboutMe);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	'use strict';
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(26);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./about-me.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./about-me.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".profilePic {\n  display: block;\n  max-width: 150px;\n  margin: 0 auto 30px;\n  border-radius: 100%; }\n\n.text-link {\n  color: #001A87;\n  font-weight: bold; }\n  .text-link:visited {\n    color: #001A87; }\n\n@media screen and (min-width: 750px) {\n  /****** About Me 2 column layout ******/\n  .profilePic {\n    margin: 0 5% 500px 0;\n    float: left; } }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function ($stateProvider) {
+	  $stateProvider.state('home', _home2.default).state('aboutMe', _aboutMe2.default).state('projects', _projects2.default).state('resume', _resume2.default).state('contactMe', _contactMe2.default);
+	};
+	
+	var _home = __webpack_require__(28);
+	
+	var _home2 = _interopRequireDefault(_home);
+	
+	var _aboutMe = __webpack_require__(30);
+	
+	var _aboutMe2 = _interopRequireDefault(_aboutMe);
+	
+	var _projects = __webpack_require__(32);
+	
+	var _projects2 = _interopRequireDefault(_projects);
+	
+	var _resume = __webpack_require__(34);
+	
+	var _resume2 = _interopRequireDefault(_resume);
+	
+	var _contactMe = __webpack_require__(38);
+	
+	var _contactMe2 = _interopRequireDefault(_contactMe);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _home = __webpack_require__(29);
 	
 	var _home2 = _interopRequireDefault(_home);
 	
@@ -35940,13 +36059,13 @@
 	};
 
 /***/ },
-/* 23 */
+/* 29 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class='home-page'>\n<div class='fade-away content' >\n  <div> Professional Overseas Basketball Player </div>\n  <img  class='main-page-img' ng-src={{initialImage}} />\n</div>\n\n<h2 class='content fade-in first' id='turned'> TURNED </h2>\n\n<div class='fade-in second content'>\n  <div> Full Stack JavaScript Developer </div>\n  <img class='main-page-img' ng-src={{transitionImage}} />\n</div>\n\n</div>\n";
+	module.exports = "<div class='home-page'>\n<div class='fade-away content' >\n  <div class='home-header'> Professional Overseas Basketball Player </div>\n  <img  class='main-page-img' ng-src={{initialImage}} alt='Basketball pic should go here' />\n</div>\n\n<h2 class='content fly-in' id='turned'> TURNED </h2>\n\n<div class='fade-in delay content'>\n  <div class='home-header'> Enthusiastic Software Developer </div>\n  <img class='main-page-img' ng-src={{transitionImage}} alt='Developer pic should go here'/>\n</div>\n\n</div>\n";
 
 /***/ },
-/* 24 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35955,7 +36074,7 @@
 	  value: true
 	});
 	
-	var _aboutMe = __webpack_require__(25);
+	var _aboutMe = __webpack_require__(31);
 	
 	var _aboutMe2 = _interopRequireDefault(_aboutMe);
 	
@@ -35968,13 +36087,13 @@
 	};
 
 /***/ },
-/* 25 */
+/* 31 */
 /***/ function(module, exports) {
 
-	module.exports = "<img class='profilePic' ng-src={{profilePic}} />\n<h3> About </h3>\n\n<p> Hi, my name is Max Jacobsen. Straight out of college, I got a offer to go play professional basketball in Portugal for a year. There\nwas no way I was going to turn that offer down. It was a enlightening experience to go do the thing I loved in a completely new culture. Now I want\nto transfer the same passion I had for basketball into the coding industry. I love the challenging atmosphere it provides and how there is always something\nnew to learn. </p>\n\n<p> If you would like to follow me on twitter, my username is <a class='text-link' href='https://twitter.com/max_jacobsen33' target=\"_blank\"> @max_jacobsen33 </a>\n  or you can connect with me on my <a class='text-link' href='https://www.linkedin.com/in/maxjacobsen33' target=\"_blank\"> linkedin page</a>. </p>\n";
+	module.exports = "<img class='profilePic' ng-src={{profilePic}} />\n\n<div id='about-me'>\n  <h3> About </h3>\n\n  <p> Hi, my name is Max Jacobsen. I just completed Code Fellow’s 18 ­week Full­Stack JavaScript Development boot camp.\n  From my boot camp experience, I realized I am most passionate about creating web applications that give users a meaningful and memorable experience.\n  I really want to build applications that will benefit others and solve problems that will help improve our technology driven world.</p>\n\n  <p> I graduated at Northern Arizona University (NAU) with a Electrical Engineering degree. I have always enjoyed solving difficult problems and working with numbers.\n    During my college experience, I played three years of Division I basketball for NAU. After graduation, I was given the opportunity to go play professional basketball in\n    Portugal for a year. It was an enlightening experience where I learned a lot about their culture and how to adapt to playing with teammates who could hardly speak my language. </p>\n\n  <p>  I have always had a great passion for basketball. Now I want to transfer that same passion I had for basketball into the coding industry. I love the challenging atmosphere it provides\n    and how there is always something new to learn. </p>\n\n  <p> If you would like to follow me on twitter, my username is <a class='text-link' href='https://twitter.com/max_jacobsen33' target=\"_blank\"> @max_jacobsen33 </a>\n    or you can connect with me on my <a class='text-link' href='https://www.linkedin.com/in/maxjacobsen33' target=\"_blank\"> linkedin page</a>. </p>\n</div>\n";
 
 /***/ },
-/* 26 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35983,7 +36102,7 @@
 	  value: true
 	});
 	
-	var _projects = __webpack_require__(27);
+	var _projects = __webpack_require__(33);
 	
 	var _projects2 = _interopRequireDefault(_projects);
 	
@@ -35996,13 +36115,13 @@
 	};
 
 /***/ },
-/* 27 */
+/* 33 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class='projectContainer'>\n  <div class='projectListInfo' ng-repeat='project in projects'>\n    <div>{{project.title}} </div>\n    <img class='projectListImage' ng-src={{project.src}}> </img>\n    <div><a href={{project.url}} target=\"_blank\"> Click here to go to website </a> </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 28 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36011,25 +36130,72 @@
 	  value: true
 	});
 	
-	var _resume = __webpack_require__(29);
+	var _resume = __webpack_require__(35);
 	
 	var _resume2 = _interopRequireDefault(_resume);
+	
+	var _resume3 = __webpack_require__(36);
+	
+	var _resume4 = _interopRequireDefault(_resume3);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
 	  url: '/resume',
-	  template: _resume2.default
+	  template: _resume2.default,
+	  controller: function controller($scope) {
+	    $scope.style = _resume4.default;
+	  }
 	};
 
 /***/ },
-/* 29 */
+/* 35 */
 /***/ function(module, exports) {
 
-	module.exports = "<h2> Max Jacobsen </h2>\n<ul>\n  <li> Portland, OR </li>\n  <li> max.jacobsen33@gmail.com </li>\n  <li> <a href='https://www.linkedin.com/in/maxjacobsen33'> Linkedin </a> </li>\n  <li> <a href='https://github.com/max33nau'> Github </a> </li>\n</ul>\n\n<hr>\n\n<h4> Profile </h4>\n<p> I am a full­stack JavaScript developer with a degree in electrical engineering. Former overseas professional basketball\n  player who believes that efficient software design, solid teamwork and constant learning are the keys to a project’s\n  long­term success.\n</p>\n\n<hr>\n\n<h4> Technical Skills </h4>\n<p>JavaScript, jQuery, MongoDB, AngularJS, Express, Hapi, Node.js, Mongoose, Socket.io, HTML, CSS </p>\n<!-- GRAPH WILL GO HERE -->\n</p>\n\n<hr>\n\n<h4> <a ui-sref=\"projects\"> Projects </a> </h4>\n\n<h5> Relax And Color - March 2016 </h5>\n<p> Web App designed for people who can’t find the time to work on coloring books\n  but still want the feeling of relaxation and creativeness associated with them.\n  The app brings coloring books to your screen so you can color anytime and anywhere.\n  The app was built using the JavaScript MEAN Stack (Mongo, Express, Angular, Node). </p>\n\n<h5> Settlers of Candyland - December 2015 </h5>\n\n<p> Inspired by the Settlers of Catan board game, this web app allows the user to play the game anywhere with a tablet or a computer. Written in HTML, CSS and JavaScript.\n  I wrote the functionality for the game using jQuery and Handlebar templates. </p>\n\n<hr>\n\n<h4> Work Experience </h4>\n<h5> Area Director​­ S​kyhawks Youth Sports Camps ­ OR & WA ­ Summer 2015 </h5>\n<ul>\n  <li> Promoted to director after working as a coach for six weeks </li>\n  <li> ­Directed operations for 50+ youth sports camps, which included over 750 children </li>\n  <li> ­Hired & trained new employees and supervised over 30 staff members </li>\n  <li> Responsible for camp promotions, customer engagement, and conflict resolution</li>\n</ul>\n\n<h5> Area Director​­ S​kyhawks Youth Sports Camps ­ OR & WA ­ Summer 2015 </h5>\n<ul>\n  <li> Starting power forward for Portuguese D­1 basketball team</li>\n  <li> Named to First Team All­League Rookie Team for 2014­2015 season </li>\n</ul>\n\n<hr>\n\n<h4> Education </h4>\n<h5> Code Fellows - Full Stack JavaScript Development Certificate - Portland, OR 2016 </h5>\n<h5> Northern Arizona University (NAU) - Bachelor of Science in Electrical Engineering </h5>\n<ul>\n  <li> Four-year athletic scholarship</li>\n  <li> NCAA Division I Basketball Team Captain </li>\n  <li> Recipient of NAU Scholar Athlet of the Year Award - 2014 </li>\n</ul>\n\n­\n";
+	module.exports = "<div class='resume'>\n  <div class='resume-info'>\n    <h2> Max Jacobsen </h2>\n    <ul>\n      <li> Portland, OR </li>\n      <li> max.jacobsen33@gmail.com </li>\n      <li> <a href='https://www.linkedin.com/in/maxjacobsen33'> Linkedin </a> </li>\n      <li> <a href='https://github.com/max33nau'> Github </a> </li>\n    </ul>\n    <hr>\n  </div>\n\n  <div class='resume-profile'>\n    <h4 class='resume-subject-header'> Profile </h4>\n    <p> I am a full­stack JavaScript developer with a degree in electrical engineering. Former overseas professional basketball\n      player who believes that efficient software design, solid teamwork and constant learning are the keys to a project’s\n      long­term success.\n    </p>\n    <hr>\n  </div>\n\n  <div class='resume-skills'>\n    <h4 class='resume-subject-header'> Technical Skills </h4>\n    <p>JavaScript, jQuery, MongoDB, AngularJS, Express, Hapi, Node.js, Mongoose, Socket.io, HTML, CSS </p>\n    <!-- GRAPH WILL GO HERE -->\n    </p>\n    <hr>\n  </div>\n\n  <div class='resume-projects'>\n    <h4 class='resume-subject-header'> <a ui-sref=\"projects\"> Projects </a> </h4>\n\n    <div class='resume-subject-child'> <span class='resume-subject-child-header'>Relax And Color </span> - March 2016 </div>\n    <p> Web App designed for people who can’t find the time to work on coloring books\n      but still want the feeling of relaxation and creativeness associated with them.\n      The app brings coloring books to your screen so you can color anytime and anywhere.\n      The app was built using the JavaScript MEAN Stack (Mongo, Express, Angular, Node). </p>\n\n    <div class='resume-subject-child'> <span class='resume-subject-child-header'> Settlers of Candyland </span> - December 2015 </div>\n    <p> Inspired by the Settlers of Catan board game, this web app allows the user to play the game anywhere with a tablet or a computer. Written in HTML, CSS and JavaScript.\n      I wrote the functionality for the game using jQuery and Handlebar templates. </p>\n    <hr>\n  </div>\n\n  <div class='resume-work-expereince'>\n    <h4 class='resume-subject-header'> Work Experience </h4>\n    <div class='resume-subject-child'> <span class='resume-subject-child-header'>  Area Director​­ S​kyhawks Youth Sports Camps </span> -­ OR & WA -­ Summer 2015 </div>\n    <ul class='resume-subject-list'>\n      <li> Promoted to director after working as a coach for six weeks </li>\n      <li> ­Directed operations for 50+ youth sports camps, which included over 750 children </li>\n      <li> ­Hired & trained new employees and supervised over 30 staff members </li>\n      <li> Responsible for camp promotions, customer engagement, and conflict resolution</li>\n    </ul>\n\n    <div class='resume-subject-child'> <span class='resume-subject-child-header'> Pro Basketball Player </span> - Sampaense Club - Portugal - 2014-2015</div>\n    <ul class='resume-subject-list'>\n      <li> Starting power forward for Portuguese D­1 basketball team</li>\n      <li> Named to First Team All­League Rookie Team for 2014­2015 season </li>\n    </ul>\n\n    <hr>\n  </div>\n\n  <div class='resume-education'>\n    <h4 class='resume-subject-header'> Education </h4>\n    <div class='resume-subject-child' ><span class='resume-subject-child-header'> Code Fellows </span> - Full-Stack JavaScript Development Certificate - Portland, OR 2016 </div>\n    <div class='resume-subject-child'><span class='resume-subject-child-header'> Northern Arizona University (NAU) </span> - Bachelor of Science in Electrical Engineering </div>\n    <ul class='resume-subject-list'>\n      <li> Four-year athletic scholarship</li>\n      <li> NCAA Division I Basketball Team Captain </li>\n      <li> Recipient of NAU Scholar Athlet of the Year Award - 2014 </li>\n    </ul>\n  </div>\n</div>\n\n­\n";
 
 /***/ },
-/* 30 */
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(37);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./resume.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/postcss-loader/index.js!./../../../../node_modules/sass-loader/index.js!./resume.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".resume p, .resume li {\n  font-size: .8em; }\n\n.resume-info {\n  text-align: center;\n  margin: 0 auto; }\n  .resume-info h2 {\n    padding: 5px;\n    margin: 0; }\n  .resume-info ul {\n    margin: 0;\n    padding: 0 0 0 0;\n    list-style: none;\n    margin-bottom: 20px; }\n  .resume-info li {\n    display: inline-block;\n    padding: 0 5px;\n    border-right: solid 2px black; }\n\n.resume-subject-header {\n  margin: 10px 0; }\n\n.resume-subject-child {\n  font-size: .8em;\n  margin-bottom: 10px; }\n\n.resume-subject-child-header {\n  font-weight: bolder;\n  font-style: italic; }\n\n.resume-subject-list {\n  margin-top: -8px;\n  list-style: circle; }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36038,7 +36204,7 @@
 	  value: true
 	});
 	
-	var _contactMe = __webpack_require__(31);
+	var _contactMe = __webpack_require__(39);
 	
 	var _contactMe2 = _interopRequireDefault(_contactMe);
 	
@@ -36050,10 +36216,10 @@
 	};
 
 /***/ },
-/* 31 */
+/* 39 */
 /***/ function(module, exports) {
 
-	module.exports = "<section>\n  <h3> General Information </h3>\n  <p> I am currently looking for a job as a JavaScript Developer. I have experience\n    in MEAN (Mongo, Express, Angular, Node) Stack JavaScript development. I enjoy both front end and/or\n    back end work. Really excited to get my foot in the door and continue to learn all I can about this exciting\n    field. </p>\n\n  <p>If you have any job opportunities or would like to contact me, please don't hesistate. Best way to reach me is through connected with me on Linkedin or email. </p>\n </section>\n\n<section>\n  <h3> Contact Details </h3>\n  <ul class='contact-infor'>\n    <li class='mail'><a href='mailto:max.jacobsen33@gmail.com'>max.jacobsen33@gmail.com </a> </li>\n    <li class='linkedin'> <a href='https://www.linkedin.com/in/maxjacobsen33'> Linkedin </a> </li>\n    <li class='github'> <a href='https://github.com/max33nau'> Github </a> </li>\n  </ul>\n\n</section>\n";
+	module.exports = "<div id='contact-me'>\n  <section id='primary'>\n    <h3> General Information </h3>\n    <p> I am currently looking for a job as a JavaScript Developer. I have experience\n      in MEAN (Mongo, Express, Angular, Node) Stack JavaScript development. I enjoy both front end and/or\n      back end work. Really excited to get my foot in the door and continue to learn all I can about this exciting\n      field. </p>\n\n    <p>If you have any job opportunities or would like to contact me, please don't hesistate. Best way to reach me is through connected with me on Linkedin or email. </p>\n   </section>\n\n  <section id='secondary'>\n    <h3> Contact Details </h3>\n    <ul class='contact-infor'>\n      <li class='mail'><a href='mailto:max.jacobsen33@gmail.com'>max.jacobsen33@gmail.com </a> </li>\n      <li class='linkedin'> <a href='https://www.linkedin.com/in/maxjacobsen33'> Linkedin </a> </li>\n      <li class='github'> <a href='https://github.com/max33nau'> Github </a> </li>\n    </ul>\n\n  </section>\n</div>\n";
 
 /***/ }
 /******/ ]);
